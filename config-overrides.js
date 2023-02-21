@@ -13,7 +13,7 @@ module.exports = function override(config, env) {
       new ModuleFederationPlugin({
         name: "shell",
         remotes: {
-          "@dulcon/bimbows_3_1": "bimbows_3_1@https://bimbows-3-1.herokuapp.com//remoteEntry.js",
+          "@dulcon/bimbows_3_1": "bimbows_3_1@https://bimbows-3-1.herokuapp.com/remoteEntry.js",
         },
         shared: {
           ...deps,
