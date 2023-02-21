@@ -1,7 +1,7 @@
 import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
-const Bimbows = React.lazy(() => import("@dulcon/bimbows-3-1/App"));
+const Bimbows = React.lazy(() => import("@dulcon/bimbows_3_1/App"));
 
 export const BimbowsLoader = () => {
   return (
