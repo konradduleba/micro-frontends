@@ -1,17 +1,14 @@
 import { registerApplication, start, LifeCycles } from "single-spa";
+import { pages } from "./activity-functions";
+import { Page } from "./models";
 
-registerApplication({
-  name: "@dulcon/welcome",
-  app: () => System.import<LifeCycles>("@dulcon/welcome"),
-  activeWhen: ["/"],
+pages.forEach(({ name, isDisplayed, domElement }: Page) => {
+  registerApplication(
+    name,
+    () => System.import<LifeCycles>(name),
+    isDisplayed,
+    { domElement }
+  );
 });
 
-registerApplication({
-  name: "@dulcon/bimbows-3-1",
-  app: () => System.import<LifeCycles>("@dulcon/bimbows-3-1"),
-  activeWhen: ["/bimbows-3-1"],
-});
-
-start({
-  urlRerouteOnly: true,
-});
+start();
