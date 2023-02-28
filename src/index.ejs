@@ -10,6 +10,7 @@
   <meta name="importmap-type" content="systemjs-importmap" />
   <script type="systemjs-importmap" src="https://dulcon.s3.eu-central-1.amazonaws.com/importmap.json"></script>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
   <% if (isLocal) { %>
   <script type="systemjs-importmap">
@@ -34,6 +35,11 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .wrapper {
+      display: flex;
     }
   </style>
 </head>
@@ -41,8 +47,10 @@
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
-  <nav id="navigation-container"></nav>
-  <main id="content-container"></main>
+  <div class="wrapper">
+    <nav id="navigation-container"></nav>
+    <main id="content-container"></main>
+  </div>
   <script>
     System.import('@dulcon/root-config');
   </script>
